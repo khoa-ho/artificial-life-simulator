@@ -7,7 +7,7 @@ public abstract class Organism  {
     }
 
     public void update(){
-        this.energy++;
+        this.incrementEnergy();
     }
 
     public int getEnergy(){
