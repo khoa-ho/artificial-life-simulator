@@ -8,8 +8,13 @@ import java.util.concurrent.ThreadLocalRandom;
 public class Population {
     private ArrayList<Organism> population;
 
+
+    /**Constructs a population of organisms from the given counts
+    *
+    *@param counts : a map of organism names to respective quantities
+    */
     public Population(Map<String, Integer> counts) {
-        // Pre-calculate the size of the ArrayList
+        // Pre-calculate the size of the ArrayList to save on space copy costs
         int size = 0;
         for (Entry<String, Integer> e : counts.entrySet()) {
             size += e.getValue();
@@ -28,6 +33,12 @@ public class Population {
         }
     }
 
+
+
+    /**Updates this population
+    *
+    * Invokes "update()" on all population members, calculates cooperations, and causes reproduction
+    */
     public void update() {
 
         LinkedList<Organism> birthList = new LinkedList<>();
@@ -66,6 +77,12 @@ public class Population {
 
     }
 
+
+
+    /**Calculates the mean cooperation probability of all organisms
+    *
+    *@return : the mean cooperation probability of the population
+    */
     public double calculateCooperationMean() {
         double ret = 0;
         for (Organism o : population) {
@@ -74,6 +91,13 @@ public class Population {
         return ret / population.size();
     }
 
+
+
+
+    /**Returns the counts of each type of Organism in the population
+    *
+    *@return: the population counts, in the same format as the constructor's counts argument
+    */
     public Map<String, Integer> getPopulationCounts() {
         Map<String, Integer> map = new HashMap<>();
         int coopCount = 0, defCount = 0, partCount = 0;
