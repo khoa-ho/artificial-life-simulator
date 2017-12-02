@@ -22,7 +22,9 @@ public abstract class Organism  {
         this.energy -= (this.energy > 0) ? 1 : 0;
     }
 
-
+    protected void emptify(){
+        this.energy = 0;
+    }
 
     public abstract String getType();
     

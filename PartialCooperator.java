@@ -10,7 +10,7 @@ public class PartialCooperator extends Organism {
     }
 
     public Organism reproduce(){
-        //Energy Alteration? this.energy -= 10;
+        this.emptify();
         return new PartialCooperator();
     }
 

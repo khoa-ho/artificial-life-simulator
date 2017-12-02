@@ -10,7 +10,7 @@ public class Defector extends Organism {
     }
 
     public Organism reproduce(){
-        // Energy Alteration? this.energy -= 10;
+        this.emptify();
         return new Defector();
     }
 

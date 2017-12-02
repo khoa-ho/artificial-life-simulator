@@ -10,7 +10,7 @@ public class Cooperator extends Organism {
     }
 
     public Organism reproduce(){
-        // Energy alteration???
+        this.emptify();
         return new Cooperator();
     }
 
