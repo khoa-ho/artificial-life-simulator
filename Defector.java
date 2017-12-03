@@ -1,24 +1,23 @@
 public class Defector extends Organism {
 
-
-    public Defector(){
+    public Defector() {
         super();
     }
 
-    public String getType(){
+    public String getType() {
         return "Defector";
     }
 
-    public Organism reproduce(){
+    public Organism reproduce() {
         this.emptify();
         return new Defector();
     }
 
-    public double getCooperationProbability(){
+    public double getCooperationProbability() {
         return 0.0;
     }
 
-    public boolean cooperates(){
+    public boolean cooperates() {
         return false;
     }
 

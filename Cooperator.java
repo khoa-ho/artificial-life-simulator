@@ -1,24 +1,23 @@
 public class Cooperator extends Organism {
 
-
-    public Cooperator(){
+    public Cooperator() {
         super();
     }
 
-    public String getType(){
+    public String getType() {
         return "Cooperator";
     }
 
-    public Organism reproduce(){
+    public Organism reproduce() {
         this.emptify();
         return new Cooperator();
     }
 
-    public double getCooperationProbability(){
+    public double getCooperationProbability() {
         return 1.0;
     }
 
-    public boolean cooperates(){
+    public boolean cooperates() {
         return true;
     }
 
