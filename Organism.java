@@ -1,5 +1,5 @@
 public abstract class Organism {
-
+    protected static final double MUTATION_CHANCE = 0.1;
     private int energy;
 
     public Organism() {

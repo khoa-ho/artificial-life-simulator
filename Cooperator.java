@@ -1,3 +1,5 @@
+import java.util.concurrent.ThreadLocalRandom;
+
 public class Cooperator extends Organism {
 
     public Cooperator() {
@@ -10,7 +12,12 @@ public class Cooperator extends Organism {
 
     public Organism reproduce() {
         this.emptify();
-        return new Cooperator();
+        if (ThreadLocalRandom.current().nextDouble() < MUTATION_CHANCE) {
+            return ThreadLocalRandom.current().nextBoolean() ? new Defector()
+                    : new PartialCooperator();
+        } else {
+            return new Cooperator();
+        }
     }
 
     public double getCooperationProbability() {
