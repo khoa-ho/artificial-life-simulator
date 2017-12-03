@@ -6,6 +6,9 @@ import java.util.Map.Entry;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Population {
+    private static final int COOP_BENEFIT = 8;
+    private static final int COOP_COST = 1;
+
     private ArrayList<Organism> population;
 
     /**
@@ -49,10 +52,10 @@ public class Population {
             o.update();
 
             // Cooperation
-            if (o.cooperates()) {
+            if (o.cooperates() && o.getEnergy() >= COOP_COST) {
                 if (population.size() > 1) {
-                    o.decrementEnergy();
-                    for (int i = 0; i < 8; i++) {
+                    o.decreaseEnergy(COOP_COST);
+                    for (int i = 0; i < COOP_BENEFIT; i++) {
                         Organism z = population
                                 .get(ThreadLocalRandom.current().nextInt(population.size()));
                         while (z == o) {

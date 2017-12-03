@@ -1,5 +1,5 @@
 public abstract class Organism {
-    protected static final double MUTATION_CHANCE = 0.1;
+    protected static final double MUTATION_CHANCE = 0.0;
     private int energy;
 
     public Organism() {
@@ -34,6 +34,16 @@ public abstract class Organism {
      */
     public void decrementEnergy() {
         this.energy -= (this.energy > 0) ? 1 : 0;
+    }
+    
+    /**
+     * Decreases the Energy level by an amount
+     * @param amount
+     */
+    public void decreaseEnergy(int amount) {
+        for (int i = 0; i < amount; i++) {
+            this.decrementEnergy();
+        }
     }
 
     /**
