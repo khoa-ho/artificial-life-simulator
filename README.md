@@ -2,7 +2,7 @@
 
 [Artificial Life](http://www.cs.grinnell.edu/~osera/courses/csc207/17fa/homework/alife-simulation.html)
 
-### Implement an artificial life simulator
+## Implement an artificial life simulator
 
 * *Authors:* Thomas Pinkava and Khoa Ho
 * *Emails:* [pinkavat] and [hokhoa]
